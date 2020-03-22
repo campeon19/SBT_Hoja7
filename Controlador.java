@@ -12,20 +12,20 @@ public class Controlador{
     LectorTXT txt = new LectorTXT();
     
 
-
+//lee el archivo conde estan las palabras
     public void obtenerDiccionario(){
 
         lectura = txt.leer();
         System.out.println(lectura);
 
     }
-
+//lee el archivo donde esta la oracion que se traducira
     public void obtenerOracion(){
 
         oracion = txt.leerOracion();
 
     }
-
+//introduce las palabras en el arbol
     public void insertarPalabras(){
 
 
@@ -45,25 +45,25 @@ public class Controlador{
         }
 
     }
-
+//imprime el arbol con el formato inOrder
     public void mostrarInOrder(){
 
         arbol.inOrder();
 
     }
-
+//imprimer el arbol con el formato preOrder
     public void mostrarPreOrder(){
 
         arbol.preOrder();
 
     }
-
+//imprime el arbol con el formato posOrder
     public void mostrarPosOrder(){
 
         arbol.posOrder();
 
     }
-
+//traduce la oracion con las palabras que hay en el diccionario
     public void traducirOracion(){
 
         for(int i = 0; i< oracion.size(); i++){

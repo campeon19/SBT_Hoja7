@@ -12,7 +12,7 @@ public class abb {
  
     OrdenarAlfabeticamente od = new OrdenarAlfabeticamente();
 
-    private class nodoArbol {
+    private class nodoArbol { // Crear Nodos de los arboles
         private abb hd;
         private abb hi;
         private String espanol;
@@ -34,11 +34,11 @@ public class abb {
         nodoArbol raiz = new nodoArbol();
     }
  
-    public boolean esVacio(){
+    public boolean esVacio(){ //Verificar si esta vacio
         return (raiz == null);
     }
  
-    public void insertar(int a, String es, String in){
+    public void insertar(int a, String es, String in){ //Incertar una nueva palabra
         char c1 = in.charAt(0);
         char c2 = in.charAt(1);
         char c3 = in.charAt(2);
@@ -52,7 +52,7 @@ public class abb {
             raiz = nuevo;
         }
         else{
-            List<String> x = new LinkedList<String>();
+            List<String> x = new LinkedList<String>(); //Si tienen la misma letra inicial, se verifica cual va primero ordenando alfabeticamente
             x.add(raiz.ingles);
             x.add(in);
             Collections.sort(x);
@@ -73,7 +73,7 @@ public class abb {
         }
     }
  
-    public void preOrder(){
+    public void preOrder(){ //Ordenar con la forma preOrder
         if (!esVacio()) {
             System.out.print( "(" + raiz.ingles + ", " + raiz.espanol + ")" + ", " );
             raiz.hi.preOrder();
@@ -81,7 +81,7 @@ public class abb {
         }
     }
  
-    public void inOrder(){
+    public void inOrder(){ //Ordenar con la forma inOrder
         if (!esVacio()) {
             raiz.hi.inOrder();
             System.out.print(  "(" + raiz.ingles + ", " + raiz.espanol + ")" + ", "  );
@@ -89,7 +89,7 @@ public class abb {
         }
     }
  
-    public void posOrder(){
+    public void posOrder(){ //Ordenar con la forma posOrder
         if (!esVacio()) {
             raiz.hd.posOrder();
             raiz.hi.posOrder();
@@ -98,7 +98,7 @@ public class abb {
         }
     }
  
-    public abb buscar(String in, int a){
+    public abb buscar(String in, int a){ //Buscar el valor para devolverlo
         abb arbolito = null;
         if (!esVacio()) {
             if (raiz.ingles.equalsIgnoreCase(in)) {
@@ -116,7 +116,7 @@ public class abb {
         return arbolito;
     }
  
-    public boolean existe(int a, String in){
+    public boolean existe(int a, String in){ //verificar si existe una palabra en el arbol
     if (!esVacio()) {
             if (raiz.ingles.equalsIgnoreCase(in)) {
             return true;
