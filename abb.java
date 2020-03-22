@@ -122,7 +122,7 @@ public class abb {
             return true;
             }
             else {
-                List<String> x = new LinkedList<String>();
+                /*List<String> x = new LinkedList<String>();
                 x.add(raiz.ingles);
                 x.add(in);
                 Collections.sort(x);
@@ -130,14 +130,14 @@ public class abb {
                     raiz.hd.existe(a, in);
                 }else{
                     raiz.hi.existe(a, in);
-                }
+                }*/
 
-                /*if (a < raiz.posicion) {
+                if (a < raiz.posicion) {
                     raiz.hi.existe(a, in);
                 }
                 else {
                     raiz.hd.existe(a, in);
-                }*/
+                }
             }
         }
         return false;
